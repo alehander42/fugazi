@@ -6,6 +6,8 @@ a simple gem providing a dsl for defining class fields
 
 ```ruby
 class Box
+  include Fugazi
+
   fields :content
   defaults x: 0, y: 0
   keywords z: 0
@@ -24,4 +26,7 @@ class Box
 end
 ```
 
+##todo
+
+block support
 
