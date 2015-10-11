@@ -1,6 +1,6 @@
 #fugazi
 
-a simple gem providing a dsl for defining class fields
+A simple gem providing a dsl for defining and initializing class fields
 
 ## example
 
