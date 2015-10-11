@@ -1,6 +1,6 @@
 module Fugazi
   def self.included(receiver)
-    receiver.send :include, InstanceMethods
+    receiver.send :prepend, InstanceMethods
     receiver.extend ClassMethods
   end
 
@@ -19,19 +19,19 @@ module Fugazi
     end
 
     def default_args
-      @defaults || {}
+      superclass.respond_to?(:default_keyword_args) ? superclass.default_args : @defaults || {}
     end
 
     def field_args
-      @fields || []
+      superclass.respond_to?(:field_args) ? superclass.field_args : @fields || []
     end
 
     def keyword_args
-      @keywords || []
+      superclass.respond_to?(:keyword_args) ? superclass.keyword_args : @keywords || []
     end
 
     def default_keyword_args
-      @default_keywords || {}
+      superclass.respond_to?(:default_keyword_args) ? superclass.default_keyword_args : @default_keywords || {}
     end
   end
 
@@ -64,11 +64,4 @@ module Fugazi
   end
 end
 
-# class A
-#   include Fugazi
-#   fields :z
-#   defaults y: 2
-# end
-
-# a = A.new 2
-# puts a.z, a.y
+#d

@@ -8,7 +8,6 @@ module Fugazi
 
         fields :a, :z
       end
-
       a = A.new 2, 4
       expect(a.a).to eq 2
       expect(a.z).to eq 4

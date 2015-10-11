@@ -26,7 +26,12 @@ class Box
 end
 ```
 
+##implementation
+`fugazi` saves the arg labels and default values in class variables and combines them with args in `#initialize`
+
+using class variables here is ok, because it's intended to be used only in base classes
+
 ##todo
 
 block support
-
+error handling
