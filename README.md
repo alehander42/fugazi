@@ -27,7 +27,7 @@ end
 ```
 
 ##implementation
-`fugazi` saves the arg labels and default values in class variables and combines them with args in `#initialize`
+`fugazi` saves the arg labels and default values in class inst variables and combines them with args in `#initialize`
 
 ##todo
 
